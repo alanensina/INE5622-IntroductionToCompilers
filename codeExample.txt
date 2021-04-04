@@ -1,0 +1,63 @@
+// Types accepted
+int i = 0;
+float f = 2.5;
+boolean b = true;
+char c = 'a';
+
+// Class structure
+class MyClass{
+  int a;
+  boolean b;
+
+  // Constructor function definition
+  constructor(int a, boolean b){
+    this.a = a;
+    this.b = b;
+  }
+
+  // Function definition
+  function sum(int a, int b){
+    a = a + b;
+  }
+}
+
+// Instantiate object 
+MyClass obj = create(a, b);
+
+// Calling a function
+sum(73, 45);
+print();
+
+// If-the-else structure
+if a >= b {
+  a = a + b;
+} else {
+  b = a;
+}
+
+// Switch structure
+switch a {
+  case a > b:
+    b = a + b;
+  stop;
+
+  case a < b:
+    a = a + b;
+  stop;
+
+  default:
+  a = a + b;
+  b = b * 3;
+  stop;
+}
+
+// While structure
+while a > b{
+  b = b + 1;
+}
+
+// For structure
+for int x = 0, x < 10, x = x + 1{
+  a = b * 2;
+  b = b + 5;
+}
