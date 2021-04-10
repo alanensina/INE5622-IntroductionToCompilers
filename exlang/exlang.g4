@@ -12,6 +12,9 @@ arguments
     : ID (',' ID)*
     ;
 
+arguments_exp : expression (',' expression)*
+    ;
+
 statements 
     : '{' statement* '}'
     | statement
@@ -31,11 +34,11 @@ selectionStatement
 
 iterStatement
     : 'while' '(' expression ')' statement
-    | 'for' '(' forCond ')' statement
+    | 'foreach' '(' forCond ')' statement
     ;
 
 forCond
-    : assignment ';' expr? ';' expr?
+    : INT ',' expression
     ;
 
 assignment : ID '=' expression
@@ -50,7 +53,8 @@ summ
     ;
 
 mult 
-    : left=atom (op=('*'|'/') right=mult)*
+    : left=atomic (op=('*'|'/') right=mult)*
+    ;
 
 atomic : ID
     | INT
