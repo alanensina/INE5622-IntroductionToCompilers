@@ -1,0 +1,38 @@
+function att(){
+  variable:int = 8;
+}
+
+function cond(){
+ if(a){
+   a = b;
+ }
+ else {
+   b = a;
+ }
+}
+
+function whi(){
+  while(x > y){
+   print();
+  }  
+}
+
+function swit(){
+  switch(a){
+    case 1:
+    print(a);
+    stop;
+
+    case 2:
+    print(a+1);
+    stop;
+
+    default:
+    print(a+a);
+    stop;
+  }
+}
+
+function calling(){
+  print();
+}
