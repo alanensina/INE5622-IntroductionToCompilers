@@ -1,0 +1,68 @@
+// Types accepted
+variableA:int = 1234;
+variableB:float = 34.5;
+variableC:bool = false;
+variableD:char = z;
+
+// Class structure
+class MyClass{
+  variableX:int;
+  variableY:bool;
+
+  // Constructor function with params 
+  constructor(varA:int, varB:bool){
+    this.variableX = varA;
+    this.variableY = varB;
+  }
+
+    // Constructor function without params 
+  constructor(){
+  }
+
+  // Function definition
+  function sum(varA:int, varB:int){
+    variableX = varA + varB;
+  }
+}
+
+// Calling a function
+sum(73, 45);
+print();
+
+// Instantiate object 
+MyClass obj1 = create(varA, varB);
+MyClass obj2 = create();
+
+// If-the-else structure
+if (a >= b) {
+  a = a + b;
+} 
+else {
+  b = a;
+}
+
+// Switch structure
+switch(a) {
+  case 1:
+    b = a + b;
+  stop;
+
+  case 2:
+    a = a + b;
+  stop;
+
+  default:
+  a = a + b;
+  b = b * 3;
+  stop;
+}
+
+// While structure
+while (a > b){
+  b = b + 1;
+}
+
+// For structure
+repeat(10){
+  a = a + 5;
+}
