@@ -45,6 +45,15 @@ jumpStatement
 selectionStatement
     : IF '(' expression ')' statements (ELSE statements)?
     | SWITCH '(' atomic ')' switchStatement+
+    | ternaryStatement
+    ;
+
+ternaryStatement:
+    expression '?' ternaryArguments ':' ternaryArguments ';'
+    ;
+
+ternaryArguments:
+    expression | call
     ;
 
 // Repetition statements
