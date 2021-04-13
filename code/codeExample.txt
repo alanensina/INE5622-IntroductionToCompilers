@@ -66,3 +66,6 @@ while (a > b){
 repeat(10){
   a = a + 5;
 }
+
+// If ternary
+a > b ? runA() : runB();
