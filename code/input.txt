@@ -21,15 +21,17 @@ function swit(){
   switch(a){
     case 1:
     print(a);
-    stop;
+    break;
 
     case 2:
-    print(a+1);
-    stop;
+    a = a +1;
+    print(a);
+    break;
 
     default:
-    print(a+a);
-    stop;
+    a = a + a;
+    print(a);
+    break;
   }
 }
 

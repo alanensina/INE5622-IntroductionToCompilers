@@ -33,8 +33,8 @@ statements
 
 statement 
     : assignments ';'
-    | selectionStatement ';'
-    | iterStatement ';'
+    | selectionStatement
+    | iterStatement
     | labelStatement ';'
     | jumpStatement ';'
     | expression ';'    
@@ -122,6 +122,9 @@ arguments_repeat : INT
 
 atomic : ID
     | INT
+    | BOOL
+    | CHAR
+    | FLOAT
     | ID '('arguments_exp')'
     | call ';'
     ;

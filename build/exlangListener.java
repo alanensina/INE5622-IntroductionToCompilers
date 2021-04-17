@@ -27,6 +27,36 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitFunction_definition(exlangParser.Function_definitionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#class_definition}.
+	 * @param ctx the parse tree
+	 */
+	void enterClass_definition(exlangParser.Class_definitionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#class_definition}.
+	 * @param ctx the parse tree
+	 */
+	void exitClass_definition(exlangParser.Class_definitionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link exlangParser#class_statements}.
+	 * @param ctx the parse tree
+	 */
+	void enterClass_statements(exlangParser.Class_statementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#class_statements}.
+	 * @param ctx the parse tree
+	 */
+	void exitClass_statements(exlangParser.Class_statementsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link exlangParser#constructor}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructor(exlangParser.ConstructorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#constructor}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructor(exlangParser.ConstructorContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#arguments}.
 	 * @param ctx the parse tree
 	 */
@@ -97,6 +127,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitSelectionStatement(exlangParser.SelectionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#ternaryArguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterTernaryArguments(exlangParser.TernaryArgumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#ternaryArguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitTernaryArguments(exlangParser.TernaryArgumentsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#iterStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -117,6 +157,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitWhileStatement(exlangParser.WhileStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignments(exlangParser.AssignmentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignments(exlangParser.AssignmentsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#assignment_typed}.
 	 * @param ctx the parse tree
 	 */
@@ -136,6 +186,16 @@ public interface exlangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssignment(exlangParser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link exlangParser#assignment_change}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment_change(exlangParser.Assignment_changeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#assignment_change}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment_change(exlangParser.Assignment_changeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link exlangParser#types}.
 	 * @param ctx the parse tree
