@@ -19,9 +19,9 @@ public class exlangLexer extends Lexer {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, TYPE_INT=22, TYPE_FLOAT=23, TYPE_BOOLEAN=24, 
-		TYPE_CHAR=25, WHILE=26, FOR=27, IF=28, ELSE=29, SWITCH=30, CASE=31, CLASS=32, 
-		CONSTRUCTOR=33, FUNCTION=34, DEFAULT=35, BREAK=36, RETURN=37, CONTINUE=38, 
-		ID=39, INT=40, FLOAT=41, CHAR=42, BOOL=43, WS=44;
+		TYPE_CHAR=25, WHILE=26, REPEAT=27, IF=28, ELSE=29, SWITCH=30, CASE=31, 
+		CLASS=32, CONSTRUCTOR=33, FUNCTION=34, DEFAULT=35, BREAK=36, RETURN=37, 
+		CONTINUE=38, ID=39, INT=40, FLOAT=41, CHAR=42, BOOL=43, WS=44;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -35,7 +35,7 @@ public class exlangLexer extends Lexer {
 			"T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", "T__7", "T__8", 
 			"T__9", "T__10", "T__11", "T__12", "T__13", "T__14", "T__15", "T__16", 
 			"T__17", "T__18", "T__19", "T__20", "TYPE_INT", "TYPE_FLOAT", "TYPE_BOOLEAN", 
-			"TYPE_CHAR", "WHILE", "FOR", "IF", "ELSE", "SWITCH", "CASE", "CLASS", 
+			"TYPE_CHAR", "WHILE", "REPEAT", "IF", "ELSE", "SWITCH", "CASE", "CLASS", 
 			"CONSTRUCTOR", "FUNCTION", "DEFAULT", "BREAK", "RETURN", "CONTINUE", 
 			"ID", "INT", "FLOAT", "CHAR", "BOOL", "WS"
 		};
@@ -56,7 +56,7 @@ public class exlangLexer extends Lexer {
 		return new String[] {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, "TYPE_INT", 
-			"TYPE_FLOAT", "TYPE_BOOLEAN", "TYPE_CHAR", "WHILE", "FOR", "IF", "ELSE", 
+			"TYPE_FLOAT", "TYPE_BOOLEAN", "TYPE_CHAR", "WHILE", "REPEAT", "IF", "ELSE", 
 			"SWITCH", "CASE", "CLASS", "CONSTRUCTOR", "FUNCTION", "DEFAULT", "BREAK", 
 			"RETURN", "CONTINUE", "ID", "INT", "FLOAT", "CHAR", "BOOL", "WS"
 		};

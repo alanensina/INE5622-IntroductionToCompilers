@@ -111,6 +111,18 @@ public class exlangBaseListener implements exlangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSwitchStatements(exlangParser.SwitchStatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSwitchStatements(exlangParser.SwitchStatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSwitchStatement(exlangParser.SwitchStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -28,20 +28,25 @@ arguments
 
 statements 
     : '{' statement* '}'
-    | statement //vai poder chamar funcao sem chaves?
     ;
 
 statement 
     : assignments ';'
     | selectionStatement
     | iterStatement
-    | labelStatement ';'
+    | labelStatement
     | jumpStatement ';'
     | expression ';'    
     | call ';'
     ;
 
-switchStatement : '{' CASE atomic ':' statements+ '}';
+switchStatements : '{' CASE atomic ':' switchStatement* '}';
+
+switchStatement: assignments ';' 
+    | jumpStatement 
+    | call ';'
+    | labelStatement
+    ;
 
 labelStatement :     
     ID ':' statement
@@ -57,7 +62,7 @@ jumpStatement
 // Conditional statements
 selectionStatement
     : IF '(' expression ')' statements (ELSE statements)?
-    | SWITCH '(' atomic ')' switchStatement+
+    | SWITCH '(' atomic ')' switchStatements+
     | expression '?' ternaryArguments ':' ternaryArguments
     ;
 
@@ -68,11 +73,11 @@ ternaryArguments:
 // Repetition statements
 iterStatement
     : WHILE '(' expression ')' whileStatement
-    | FOR '(' arguments_repeat ')' statements
+    | REPEAT '(' arguments_repeat ')' statements
     ;
 
 whileStatement: 
-    '{' statement? '}' //nao deveria ser * tbm? pq pode ter mais de um statement dentro
+    '{' statement* '}'
     ;
 
 assignments
@@ -135,7 +140,7 @@ TYPE_FLOAT: 'float';
 TYPE_BOOLEAN: 'bool';
 TYPE_CHAR: 'char';
 WHILE: 'while';
-FOR: 'repeat';
+REPEAT: 'repeat';
 IF: 'if';
 ELSE: 'else';
 SWITCH: 'switch';

@@ -87,6 +87,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitStatement(exlangParser.StatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#switchStatements}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchStatements(exlangParser.SwitchStatementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#switchStatements}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchStatements(exlangParser.SwitchStatementsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#switchStatement}.
 	 * @param ctx the parse tree
 	 */
