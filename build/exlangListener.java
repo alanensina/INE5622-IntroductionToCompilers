@@ -27,6 +27,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitFunction_definition(exlangParser.Function_definitionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunction_call(exlangParser.Function_callContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#function_call}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunction_call(exlangParser.Function_callContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#class_definition}.
 	 * @param ctx the parse tree
 	 */
@@ -197,6 +207,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitAssignment_empty(exlangParser.Assignment_emptyContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#assignment_call}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment_call(exlangParser.Assignment_callContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#assignment_call}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment_call(exlangParser.Assignment_callContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#assignment}.
 	 * @param ctx the parse tree
 	 */
@@ -237,6 +257,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitCall(exlangParser.CallContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#call_arguments}.
+	 * @param ctx the parse tree
+	 */
+	void enterCall_arguments(exlangParser.Call_argumentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#call_arguments}.
+	 * @param ctx the parse tree
+	 */
+	void exitCall_arguments(exlangParser.Call_argumentsContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#expressions}.
 	 * @param ctx the parse tree
 	 */
@@ -256,16 +286,6 @@ public interface exlangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpression(exlangParser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link exlangParser#arguments_exp}.
-	 * @param ctx the parse tree
-	 */
-	void enterArguments_exp(exlangParser.Arguments_expContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link exlangParser#arguments_exp}.
-	 * @param ctx the parse tree
-	 */
-	void exitArguments_exp(exlangParser.Arguments_expContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link exlangParser#summ}.
 	 * @param ctx the parse tree

@@ -39,6 +39,18 @@ public class exlangBaseListener implements exlangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFunction_call(exlangParser.Function_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunction_call(exlangParser.Function_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterClass_definition(exlangParser.Class_definitionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -243,6 +255,18 @@ public class exlangBaseListener implements exlangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAssignment_call(exlangParser.Assignment_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignment_call(exlangParser.Assignment_callContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAssignment(exlangParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -291,6 +315,18 @@ public class exlangBaseListener implements exlangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCall_arguments(exlangParser.Call_argumentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCall_arguments(exlangParser.Call_argumentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpressions(exlangParser.ExpressionsContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -310,18 +346,6 @@ public class exlangBaseListener implements exlangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpression(exlangParser.ExpressionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterArguments_exp(exlangParser.Arguments_expContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArguments_exp(exlangParser.Arguments_expContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

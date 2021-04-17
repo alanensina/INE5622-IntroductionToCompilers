@@ -8,6 +8,8 @@ function_definition
     : FUNCTION ID '('arguments? ')' statements
     ;
 
+function_call: ID '.' call;
+
 class_definition
     : CLASS ID '{' class_statements* '}';
 
@@ -39,7 +41,7 @@ statement
     | jumpStatement ';'
     | expression ';'    
     | call ';'
-    | class_definition
+    | function_call ';'
     ;
 
 
@@ -89,12 +91,16 @@ assignments
     | assignment
     | assignment_change
     | assignment_empty
+    | assignment_call
     ;
 
 assignment_typed : ID ':' types '=' expression
     ;
 
 assignment_empty: ID ':' types;
+
+assignment_call: ID '=' call 
+    ;
 
 assignment : ID '=' expression
     ;
@@ -109,17 +115,17 @@ types : TYPE_INT
     | TYPE_CHAR
     ;
 
-call: ID '(' expressions? ')' 
+call: ID '(' call_arguments? ')' 
      ;
+
+call_arguments: expressions | arguments
+    ;
 
 expressions : expression (',' expression)*
       ;
 
 expression
     :   left=summ (op=('>'|'<'|'>='|'<='|'=='|'!='|'&&'|'||') right=expression)*
-    ;
-
-arguments_exp : expression (',' expression)*
     ;
 
 summ 
@@ -138,7 +144,6 @@ atomic : ID
     | BOOL
     | CHAR
     | FLOAT
-    | ID '('arguments_exp')'
     | call ';'
     ;
     

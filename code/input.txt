@@ -56,4 +56,10 @@ function forA(){
     print(variable);
   }
 }
+
+function classUse(){
+  obj1 = MyClass(varA, varB);
+  obj1.forA();
+}
+
 }
