@@ -1,4 +1,16 @@
-function att(){
+class MyClass{
+  variableX:int;
+  variableY:bool;
+
+  constructor(varA:int, varB:bool){
+    variableX = varA;
+    variableY = varB;
+  }
+
+  constructor(){
+  }
+
+  function att(){
   variable:int = 8;
 }
 
@@ -43,24 +55,5 @@ function forA(){
   for(variable:int = 8 , variable > 10 , variable = variable + 1){
     print(variable);
   }
-}
-
-function xxx(){
-class MyClass{
-  variableX:int;
-  variableY:bool;
-
-  constructor(varA:int, varB:bool){
-    variableX = varA;
-    variableY = varB;
-  }
-
-  constructor(){
-  }
-
-  function sum(varA:int, varB:int){
-    variableX = varA + varB;
-  }
-  
 }
 }

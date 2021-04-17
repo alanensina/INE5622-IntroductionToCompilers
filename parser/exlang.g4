@@ -1,7 +1,7 @@
 grammar exlang;
 
 start 
-    : function_definition* EOF
+    : class_definition* EOF
     ;
 
 function_definition 

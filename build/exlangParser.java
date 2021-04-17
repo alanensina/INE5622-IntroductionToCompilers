@@ -117,11 +117,11 @@ public class exlangParser extends Parser {
 
 	public static class StartContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(exlangParser.EOF, 0); }
-		public List<Function_definitionContext> function_definition() {
-			return getRuleContexts(Function_definitionContext.class);
+		public List<Class_definitionContext> class_definition() {
+			return getRuleContexts(Class_definitionContext.class);
 		}
-		public Function_definitionContext function_definition(int i) {
-			return getRuleContext(Function_definitionContext.class,i);
+		public Class_definitionContext class_definition(int i) {
+			return getRuleContext(Class_definitionContext.class,i);
 		}
 		public StartContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -147,11 +147,11 @@ public class exlangParser extends Parser {
 			setState(63);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==FUNCTION) {
+			while (_la==CLASS) {
 				{
 				{
 				setState(60);
-				function_definition();
+				class_definition();
 				}
 				}
 				setState(65);
@@ -2307,7 +2307,7 @@ public class exlangParser extends Parser {
 		"\3\2\2\2$\u0111\3\2\2\2&\u0117\3\2\2\2(\u011b\3\2\2\2*\u0123\3\2\2\2,"+
 		"\u0125\3\2\2\2.\u0127\3\2\2\2\60\u012e\3\2\2\2\62\u0136\3\2\2\2\64\u013e"+
 		"\3\2\2\2\66\u0146\3\2\2\28\u014e\3\2\2\2:\u0156\3\2\2\2<\u0165\3\2\2\2"+
-		">@\5\4\3\2?>\3\2\2\2@C\3\2\2\2A?\3\2\2\2AB\3\2\2\2BD\3\2\2\2CA\3\2\2\2"+
+		">@\5\6\4\2?>\3\2\2\2@C\3\2\2\2A?\3\2\2\2AB\3\2\2\2BD\3\2\2\2CA\3\2\2\2"+
 		"DE\7\2\2\3E\3\3\2\2\2FG\7$\2\2GH\7*\2\2HJ\7\3\2\2IK\5\f\7\2JI\3\2\2\2"+
 		"JK\3\2\2\2KL\3\2\2\2LM\7\4\2\2MN\5\16\b\2N\5\3\2\2\2OP\7\"\2\2PQ\7*\2"+
 		"\2QU\7\5\2\2RT\5\b\5\2SR\3\2\2\2TW\3\2\2\2US\3\2\2\2UV\3\2\2\2VX\3\2\2"+
