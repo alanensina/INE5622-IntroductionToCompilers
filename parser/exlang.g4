@@ -37,7 +37,7 @@ labelStatement :
     ;
 
 jumpStatement
-    :   STOP ';'
+    :   BREAK ';'
     |   RETURN expression? ';'
     ;
 
@@ -114,12 +114,14 @@ CLASS: 'class';
 CONSTRUCTOR: 'constructor';
 FUNCTION: 'function';
 DEFAULT: 'default';
-CREATE: 'create';
-STOP: 'stop';
+BREAK: 'break';
 RETURN: 'return';
 CONTINUE: 'continue';
 
 // Regex
 ID : [a-zA-Z][a-zA-Z0-9]*;
 INT : '-'?[0-9]+;
+FLOAT: '-'?[0-9]*.?[0-9]+;
+CHAR: [a-zA-Z0-9+<>?=!.,*-];
+BOOL: 'true'|'false'|'0'|'1';
 WS : [ \r\n\t]+ -> skip;

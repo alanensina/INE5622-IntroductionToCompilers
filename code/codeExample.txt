@@ -30,8 +30,8 @@ sum(73, 45);
 print();
 
 // Instantiate object 
-MyClass obj1 = create(varA, varB);
-MyClass obj2 = create();
+obj1:MyClass = MyClass(varA, varB);
+obj2:MyClass = MyClass();
 
 // If-the-else structure
 if (a >= b) {
