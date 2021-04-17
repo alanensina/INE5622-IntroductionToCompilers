@@ -44,3 +44,23 @@ function forA(){
     print(variable);
   }
 }
+
+function xxx(){
+class MyClass{
+  variableX:int;
+  variableY:bool;
+
+  constructor(varA:int, varB:bool){
+    variableX = varA;
+    variableY = varB;
+  }
+
+  constructor(){
+  }
+
+  function sum(varA:int, varB:int){
+    variableX = varA + varB;
+  }
+  
+}
+}

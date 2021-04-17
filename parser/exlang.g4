@@ -9,21 +9,22 @@ function_definition
     ;
 
 class_definition
-    : CLASS ID '{' class_statements '}';
+    : CLASS ID '{' class_statements* '}';
 
 class_statements
-    : assignment? ';'
-    | assignment_typed? ';'
-    | constructor? ';'
-    | function_definition*? ';'
+    : assignment_typed ';'
+    | assignment_empty ';'
+    | constructor
+    | function_definition
     ;
 
 constructor
-    : CONSTRUCTOR '(' arguments ')' '{' statement*? '}'
+    : CONSTRUCTOR '(' arguments? ')' '{' statement*? '}'
     ;
 
 arguments 
-    : ID (',' ID)*
+    : ID (',' ID)*?
+    | assignment_empty (',' assignment_empty)*? 
     ;
 
 statements 
@@ -38,6 +39,7 @@ statement
     | jumpStatement ';'
     | expression ';'    
     | call ';'
+    | class_definition
     ;
 
 
@@ -86,10 +88,13 @@ assignments
     : assignment_typed
     | assignment
     | assignment_change
+    | assignment_empty
     ;
 
 assignment_typed : ID ':' types '=' expression
     ;
+
+assignment_empty: ID ':' types;
 
 assignment : ID '=' expression
     ;

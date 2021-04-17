@@ -231,6 +231,18 @@ public class exlangBaseListener implements exlangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAssignment_empty(exlangParser.Assignment_emptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignment_empty(exlangParser.Assignment_emptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAssignment(exlangParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}

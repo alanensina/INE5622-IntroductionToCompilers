@@ -11,8 +11,8 @@ class MyClass{
 
   // Constructor function with params 
   constructor(varA:int, varB:bool){
-    this.variableX = varA;
-    this.variableY = varB;
+    variableX = varA;
+    variableY = varB;
   }
 
     // Constructor function without params 

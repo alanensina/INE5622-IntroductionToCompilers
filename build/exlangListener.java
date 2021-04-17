@@ -187,6 +187,16 @@ public interface exlangListener extends ParseTreeListener {
 	 */
 	void exitAssignment_typed(exlangParser.Assignment_typedContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link exlangParser#assignment_empty}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment_empty(exlangParser.Assignment_emptyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link exlangParser#assignment_empty}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment_empty(exlangParser.Assignment_emptyContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link exlangParser#assignment}.
 	 * @param ctx the parse tree
 	 */
