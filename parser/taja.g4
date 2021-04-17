@@ -1,4 +1,4 @@
-grammar exlang;
+grammar taja;
 
 start 
     : class_definition* EOF
