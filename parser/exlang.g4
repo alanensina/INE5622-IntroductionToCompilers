@@ -8,22 +8,35 @@ function_definition
     : FUNCTION ID '('arguments? ')' statements
     ;
 
+class_definition
+    : CLASS ID '{' class_statements '}';
+
+class_statements
+    : assignment? ';'
+    | assignment_typed? ';'
+    | constructor? ';'
+    | function_definition*? ';'
+    ;
+
+constructor
+    : CONSTRUCTOR '(' arguments ')' '{' statement*? '}'
+    ;
+
 arguments 
     : ID (',' ID)*
     ;
 
 statements 
     : '{' statement* '}'
-    | statement
+    | statement //vai poder chamar funcao sem chaves?
     ;
 
 statement 
-    : assignment ';'
-    | assignment_typed ';'
-    | selectionStatement
-    | iterStatement
-    | labelStatement
-    | jumpStatement
+    : assignments ';'
+    | selectionStatement ';'
+    | iterStatement ';'
+    | labelStatement ';'
+    | jumpStatement ';'
     | expression ';'    
     | call ';'
     ;
@@ -45,6 +58,11 @@ jumpStatement
 selectionStatement
     : IF '(' expression ')' statements (ELSE statements)?
     | SWITCH '(' atomic ')' switchStatement+
+    | expression '?' ternaryArguments ':' ternaryArguments
+    ;
+
+ternaryArguments:
+    expression | call
     ;
 
 // Repetition statements
@@ -54,13 +72,22 @@ iterStatement
     ;
 
 whileStatement: 
-    '{' statement? '}'
+    '{' statement? '}' //nao deveria ser * tbm? pq pode ter mais de um statement dentro
+    ;
+
+assignments
+    : assignment_typed
+    | assignment
+    | assignment_change
     ;
 
 assignment_typed : ID ':' types '=' expression
     ;
 
 assignment : ID '=' expression
+    ;
+
+assignment_change : ID '=' ID
     ;
 
 types : TYPE_INT
