@@ -40,6 +40,7 @@ statement
     | call ';'
     ;
 
+
 switchStatements : '{' CASE atomic ':' switchStatement* '}';
 
 switchStatement: assignments ';' 
@@ -74,6 +75,7 @@ ternaryArguments:
 iterStatement
     : WHILE '(' expression ')' whileStatement
     | REPEAT '(' arguments_repeat ')' statements
+    | FOR '(' assignment_typed ',' expression ',' assignment_change ')' statements
     ;
 
 whileStatement: 
@@ -93,6 +95,7 @@ assignment : ID '=' expression
     ;
 
 assignment_change : ID '=' ID
+    | assignment
     ;
 
 types : TYPE_INT
@@ -152,6 +155,7 @@ DEFAULT: 'default';
 BREAK: 'break';
 RETURN: 'return';
 CONTINUE: 'continue';
+FOR: 'for';
 
 // Regex
 ID : [a-zA-Z][a-zA-Z0-9]*;

@@ -38,3 +38,9 @@ function swit(){
 function calling(){
   print();
 }
+
+function forA(){
+  for(variable:int = 8 , variable > 10 , variable = variable + 1){
+    print(variable);
+  }
+}
