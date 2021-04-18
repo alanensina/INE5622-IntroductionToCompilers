@@ -1,0 +1,8 @@
+class ShortExample{
+
+  function printLetter(){
+    variableD:char = z;
+    print(variableD);
+  }
+
+}
