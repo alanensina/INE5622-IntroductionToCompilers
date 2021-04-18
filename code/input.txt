@@ -56,7 +56,11 @@ class MyClass{
         print(variable);
       }
     }
-    
+
+    function ifTernaryExample(){
+      variableY ? print(variableY) : exit();
+    }
+ 
     function classUseExample(){
       obj1 = MyClass(varA, varB);
       obj1.forA();

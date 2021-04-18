@@ -375,18 +375,6 @@ public class tajaBaseListener implements tajaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArguments_repeat(tajaParser.Arguments_repeatContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArguments_repeat(tajaParser.Arguments_repeatContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAtomic(tajaParser.AtomicContext ctx) { }
 	/**
 	 * {@inheritDoc}

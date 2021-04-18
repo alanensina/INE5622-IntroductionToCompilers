@@ -307,16 +307,6 @@ public interface tajaListener extends ParseTreeListener {
 	 */
 	void exitMult(tajaParser.MultContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link tajaParser#arguments_repeat}.
-	 * @param ctx the parse tree
-	 */
-	void enterArguments_repeat(tajaParser.Arguments_repeatContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link tajaParser#arguments_repeat}.
-	 * @param ctx the parse tree
-	 */
-	void exitArguments_repeat(tajaParser.Arguments_repeatContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link tajaParser#atomic}.
 	 * @param ctx the parse tree
 	 */

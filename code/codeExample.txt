@@ -19,21 +19,22 @@ class MyClass{
   constructor(){
   }
 
-  // Function definition
+// Function definition
   function sum(varA:int, varB:int){
     variableX = varA + varB;
-  }
 }
+
 
 // Calling a function
 sum(73, 45);
 print();
+obj.print();
 
 // Instantiate object 
 obj1:MyClass = MyClass(varA, varB);
 obj2:MyClass = MyClass();
 
-// If-the-else structure
+// If-then-else structure
 if (a >= b) {
   a = a + b;
 } 
@@ -45,17 +46,20 @@ else {
 switch(a) {
   case 1:
     b = a + b;
-  stop;
+  break;
 
   case 2:
     a = a + b;
-  stop;
+  break;
 
   default:
   a = a + b;
   b = b * 3;
-  stop;
+  break;
 }
+
+// If ternary
+a > b ? runA() : runB();
 
 // While structure
 while (a > b){
@@ -63,9 +67,6 @@ while (a > b){
 }
 
 // For structure
-repeat(10){
-  a = a + 5;
+for(variable:int = 8 , variable > 10 , variable = variable + 1){
+        print(variable);
 }
-
-// If ternary
-a > b ? runA() : runB();

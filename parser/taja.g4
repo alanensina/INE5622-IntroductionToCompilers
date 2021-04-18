@@ -78,7 +78,6 @@ ternaryArguments:
 // Repetition statements
 iterStatement
     : WHILE '(' expression ')' whileStatement
-    | REPEAT '(' arguments_repeat ')' statements
     | FOR '(' assignment_typed ',' expression ',' assignment_change ')' statements
     ;
 
@@ -95,6 +94,7 @@ assignments
     ;
 
 assignment_typed : ID ':' types '=' expression
+    | ID ':' types '=' atomic
     ;
 
 assignment_empty: ID ':' types;
@@ -136,9 +136,6 @@ mult
     : left=atomic (op=('*'|'/') right=mult)*
     ;
 
-arguments_repeat : INT
-    ;
-
 atomic : ID
     | INT
     | BOOL
@@ -153,7 +150,6 @@ TYPE_FLOAT: 'float';
 TYPE_BOOLEAN: 'bool';
 TYPE_CHAR: 'char';
 WHILE: 'while';
-REPEAT: 'repeat';
 IF: 'if';
 ELSE: 'else';
 SWITCH: 'switch';
