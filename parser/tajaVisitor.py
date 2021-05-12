@@ -11,17 +11,17 @@ class tajaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by tajaParser#start.
     def visitStart(self, ctx:tajaParser.StartContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) # OK
 
 
     # Visit a parse tree produced by tajaParser#function_definition.
     def visitFunction_definition(self, ctx:tajaParser.Function_definitionContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) # OK
 
 
     # Visit a parse tree produced by tajaParser#function_call.
     def visitFunction_call(self, ctx:tajaParser.Function_callContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) 
 
 
     # Visit a parse tree produced by tajaParser#class_definition.
@@ -41,7 +41,7 @@ class tajaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by tajaParser#arguments.
     def visitArguments(self, ctx:tajaParser.ArgumentsContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) # ok
 
 
     # Visit a parse tree produced by tajaParser#statements.
@@ -91,7 +91,7 @@ class tajaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by tajaParser#whileStatement.
     def visitWhileStatement(self, ctx:tajaParser.WhileStatementContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) # OK
 
 
     # Visit a parse tree produced by tajaParser#assignments.
@@ -131,7 +131,7 @@ class tajaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by tajaParser#call.
     def visitCall(self, ctx:tajaParser.CallContext):
-        return self.visitChildren(ctx)
+        return self.visitChildren(ctx) # ok
 
 
     # Visit a parse tree produced by tajaParser#call_arguments.
