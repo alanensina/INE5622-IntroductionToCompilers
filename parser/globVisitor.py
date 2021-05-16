@@ -37,15 +37,22 @@ class globVisitor(tajaVisitor):
     
     def visitFunction_definition(self, ctx:tajaParser.Function_definitionContext):
         name = ctx.name.text
-        args = self.visit(ctx.args()) if ctx.args() else [] # List or arguments
+
+        if name in self.func_table:
+            raise KeyError(self.file_name+':'+str(ctx.name.line)+':'+str(ctx.name.column)+' function '+name+' is already defined')
+
+        args = self.visit(ctx.args()) if ctx.args() else []
         
-        self.id_table = set() # Function id table
+        self.id_table = set()
         for arg in args:
             self.id_table.add(arg)
 
         self.func_table.add(name)
 
         body = self.visit(ctx.statms())
+
+        if not body:
+            raise KeyError(self.file_name+':'+str(ctx.name.line)+':'+str(ctx.name.column)+' function '+id+' does not have a body')
 
         return FuncDef(
             name=name,
@@ -66,24 +73,6 @@ class globVisitor(tajaVisitor):
                     stmt(glob, loc)
 
         return __while__
-
-    def visitSelectionStatement(self, ctx:tajaParser.SelectionStatementContext):
-        # todo
-
-    # def visitIf(self, ctx:cmmParser.IfContext):
-    #     test = self.visit(ctx.cond)
-    #     body = self.visit(ctx.then)
-    #     orelse = self.visit(ctx.otherwise) if ctx.ELSE() else None
-        
-    #     def __if__(glob, loc):
-    #         if test(glob, loc):
-    #             for stmt in body:
-    #                 stmt(glob, loc)
-    #         elif orelse is not None:
-    #             for stmt in orelse:
-    #                 stmt(glob, loc)
-
-    #     return __if__
         
     def visitArguments(self, ctx:tajaParser.ArgumentsContext):
         return [str(id) for id in ctx.ID()]
@@ -103,19 +92,13 @@ class globVisitor(tajaVisitor):
     def visitAssignment(self, ctx:tajaParser.AssignmentContext):
         expr = self.visit(ctx.expr())
         id = str(ctx.ID())
-        if id not in self.id_table: # Create table entry if variable is not defined
+        if id not in self.id_table:
             self.id_table.add(id)
         
         def __assign__(glob, loc):
             loc[id] = expr(glob, loc)
             
         return __assign__
-
-    # def visitReturn(self, ctx:tajaParser.ReturnContext):
-    #     expr = self.visit(ctx.expr())
-    #     def __return__(glob, loc):
-    #         loc['__return__'] = expr(glob, loc) 
-    #     return __return__
 
     def visitAtomic(self, ctx:tajaParser.AtomicContext):
         if ctx.expr():
@@ -149,12 +132,12 @@ class globVisitor(tajaVisitor):
 
     def visitExpression(self, ctx:tajaParser.ExpressionContext):
         left = self.visit(ctx.left)
-        if ctx.right: # >, <, >=, <=, ==, != 
+        if ctx.right:
             right = self.visit(ctx.right)
             op = self.op_map[ctx.op.text]
 
             return lambda glob, loc : op(left(glob, loc), right(glob, loc))
-        else: # higher priority expsetion 
+        else:
              return left 
 
     def visitSumm(self, ctx:tajaParser.SummContext):
@@ -175,7 +158,15 @@ class globVisitor(tajaVisitor):
             return lambda glob, loc : op(left(glob, loc), right(glob, loc))
         return left
 
-    # def visitPrint(self, ctx:cmmParser.PrintContext):
-    #     arg = self.visit(ctx.expr())
-    #     return lambda glob, loc : print(arg(glob, loc))
+    def visitDivide(self, ctx:tajaParser.DivideContext):
+        left = self.visit(ctx.left)
+        if ctx.right:
+            right = self.visit(ctx.right)
 
+            if right == 0: 
+                raise ZeroDivisionError(self.file_name+':'+str(symbol.line)+':'+str(symbol.column)+' cannot divide by zero!')
+
+            op = self.op_map[ctx.op.text]
+
+            return lambda glob, loc : op(left(glob, loc), right(glob, loc))
+        return left

@@ -1,0 +1,17 @@
+class Fibonacci {
+    num:int;
+
+    constructor(n:int) {
+        num = n;
+    }
+
+    function calc() {
+        if (n == 1) { return 1; }
+        if (n == 2) { return 1; }
+
+        return fib(n-1)+fib(n-2)
+    }
+}
+
+fib:Fibonacci = Fibonacci(10);
+print(fib.calc());
